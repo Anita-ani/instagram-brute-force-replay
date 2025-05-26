@@ -1,0 +1,10 @@
+2025-05-27 00:21:02,941 - INFO - [secure] anita@insta.com | Result: Sent code 696207
+2025-05-27 00:21:15,120 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (invalid code 111111)
+2025-05-27 00:21:17,746 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (invalid code 111111)
+2025-05-27 00:21:18,684 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (invalid code 111111)
+2025-05-27 00:21:19,581 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (invalid code 111111)
+2025-05-27 00:21:20,435 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (invalid code 111111)
+2025-05-27 00:21:21,337 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (too many attempts)
+2025-05-27 00:21:25,405 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (too many attempts)
+2025-05-27 00:21:32,640 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (too many attempts)
+2025-05-27 00:21:35,542 - INFO - [secure] 127.0.0.1|anita@insta.com | Result: Blocked (too many attempts)
