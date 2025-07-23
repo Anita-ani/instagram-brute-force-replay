@@ -10,7 +10,7 @@ on:
 jobs:
   sonarcloud:
     name: SonarCloud
-    runs-on: windows-latest
+    runs-on: ubuntu-latest  # ✅ changed from windows-latest
 
     steps:
       - uses: actions/checkout@v4
