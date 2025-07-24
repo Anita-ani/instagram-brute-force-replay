@@ -1,0 +1,39 @@
+# .github/workflows/zap-scan.yml
+name: OWASP ZAP API Scan
+
+on:
+  push:
+    branches: [ "main" ]  # You can also add "secure" if needed
+  workflow_dispatch:      # Allows manual triggering from GitHub UI
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:  Checkout repository
+        uses: actions/checkout@v4
+
+      - name:  Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 🚀 Install dependencies and start FastAPI app
+        run: |
+          pip install -r requirements.txt
+          nohup uvicorn app.main:app --host 0.0.0.0 --port 8000 &
+          sleep 15  # Wait for app to be up
+
+      - name:  Run ZAP full scan
+        uses: zaproxy/action-full-scan@v0.8.0
+        with:
+          target: 'http://localhost:8000/docs'
+          cmd_options: '-t 600 -m 5'
+          allow_issue_writing: false  # Prevents creating GitHub issues (optional)
+
+      - name: 📤 Upload ZAP HTML Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: zap-report.html
